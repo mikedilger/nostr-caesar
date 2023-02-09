@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.mikedilger.nostr-caesar";
+option java_outer_classname = "NostrCaesarProto";
+
+package nostr_caesar;
+
+// The greeting service definition.
+service NostrCaesar {
+    // Should the event be posted?
+    rpc AllowPost (Event) returns (Answer);
+
+    // Should the filter be accepted?
+    rpc AllowFilter (Filter) returns (Answer);
+}
+
+message Event {
+    string serialized = 1;
+}
+
+message Filter {
+    string serialized = 1;
+}
+
+message Answer {
+    bool answer = 1;
+}

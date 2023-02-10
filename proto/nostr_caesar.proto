@@ -17,12 +17,18 @@ service NostrCaesar {
 
 message RpcEventCheck {
     string serialized = 1;
+    string ipaddr = 2;
+    string authed_pubkey = 3; // empty if not authed
 }
 
 message RpcFilterCheck {
     string serialized = 1;
+    string ipaddr = 2;
+    string authed_pubkey = 3; // empty if not authed
+    string filter_name = 4;
 }
 
 message RpcAnswer {
-    bool answer = 1;
+    bool pass = 1;
+    string message = 2; // response to the client
 }

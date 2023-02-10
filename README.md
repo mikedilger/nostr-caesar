@@ -13,7 +13,7 @@ to accept that EVENT.
 Given a filter, it returns 'true' or 'false' to the relay, instructing it whether or not
 to accept that REQ.
 
-This is JUST AN IDEA. No relay supports this yet.
+This is JUST AN IDEA. In particular, I hard coded an example with no flexible configuration, representing how a personal relay might work. No relay supports this yet AFAIK but nostr-rs-relay is working towards gRPC support.
 
 ## License
 

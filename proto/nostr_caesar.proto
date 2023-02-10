@@ -9,20 +9,20 @@ package nostr_caesar;
 // The greeting service definition.
 service NostrCaesar {
     // Should the event be posted?
-    rpc AllowPost (Event) returns (Answer);
+    rpc AllowPost (RpcEventCheck) returns (RpcAnswer);
 
     // Should the filter be accepted?
-    rpc AllowFilter (Filter) returns (Answer);
+    rpc AllowFilter (RpcFilterCheck) returns (RpcAnswer);
 }
 
-message Event {
+message RpcEventCheck {
     string serialized = 1;
 }
 
-message Filter {
+message RpcFilterCheck {
     string serialized = 1;
 }
 
-message Answer {
+message RpcAnswer {
     bool answer = 1;
 }
